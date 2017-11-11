@@ -1,3 +1,27 @@
+# Merge log
+
+Scroll down for the original README.md!
+
+|PR Number|Title|Author|Merge Success|
+|----|----|----|----|
+|[2](https://github.com/citra-emu/citra-canary/pull/2)|Canary Base|j-selby|true|
+|[3096](https://github.com/citra-emu/citra/pull/3096)|Kernel/Arbiters: When doing ArbitrateAddress(Signal), always pick the highest priority thread, using the first one that was put to sleep if more than one thread with the same highest priority exists.|Subv|true|
+|[3091](https://github.com/citra-emu/citra/pull/3091)|Kernel/IPC: Add a small delay after each SyncRequest to prevent thread starvation.|Subv|true|
+|[3073](https://github.com/citra-emu/citra/pull/3073)|Citra-qt: Add multiplayer ui|jroweboy|true|
+|[3072](https://github.com/citra-emu/citra/pull/3072)|SDL: add multiplayer options|B3n30|true|
+|[3071](https://github.com/citra-emu/citra/pull/3071)|Network: Added an executable to host an dedicated room for local wifi|B3n30|true|
+|[3070](https://github.com/citra-emu/citra/pull/3070)|NWM_UDS: add ConnectToNetwork and DisconnectNetwork|B3n30|true|
+|[3069](https://github.com/citra-emu/citra/pull/3069)|Announce room webservice|B3n30|true|
+|[3068](https://github.com/citra-emu/citra/pull/3068)|Libnetwork: add password protected rooms, guid, and error fixes|B3n30|true|
+|[3063](https://github.com/citra-emu/citra/pull/3063)|Appveyor: Use Previous version of appveyor build environment|B3n30|true|
+|[2969](https://github.com/citra-emu/citra/pull/2969)|Service/PTM: Stub GetStepHistory function|mailwl|true|
+|[2968](https://github.com/citra-emu/citra/pull/2968)|Kernel/Threads: Add a new thread status that will allow using a Kernel::Event to put a guest thread to sleep inside an HLE handler until said event is signaled|Subv|true|
+
+
+End of merge log. You can find the original README.md below the break.
+
+------
+
 **BEFORE FILING AN ISSUE, READ THE RELEVANT SECTION IN THE [CONTRIBUTING](https://github.com/citra-emu/citra/blob/master/CONTRIBUTING.md#reporting-issues) FILE!!!**
 
 Citra Emulator
