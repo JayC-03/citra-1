@@ -79,7 +79,7 @@ ResultCode ServerSession::HandleSyncRequest(SharedPtr<Thread> thread) {
             // This delay was approximated in a homebrew application by measuring the time it takes
             // for a svcSendSyncRequest to return when performing an IPC request to a custom dummy
             // service in an o3DS with firmware 11.6.
-            static constexpr u64 IPCDelayNanoseconds = 51140;
+            static constexpr u64 IPCDelayNanoseconds = 851140;
             thread->WakeAfterDelay(IPCDelayNanoseconds);
         } else {
             // Add the thread to the list of threads that have issued a sync request with this
