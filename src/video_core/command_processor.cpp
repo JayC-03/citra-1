@@ -375,6 +375,10 @@ static void Draw(u32 command_id) {
     if (g_state.geometry_pipeline.NeedIndexInput())
         ASSERT(is_indexed);
 
+    const auto AddTriangle = [rasterizer = VideoCore::g_renderer->Rasterizer()](auto& v0, auto& v1, auto& v2) {
+        rasterizer->AddTriangle(v0, v1, v2);
+    };
+
     for (unsigned int index = 0; index < regs.pipeline.num_vertices; ++index) {
         unsigned int vertex = VertexIndex(index);
         auto& cached_vertex = vs_output[is_indexed ? vertex : index];
@@ -394,12 +398,8 @@ static void Draw(u32 command_id) {
         if (use_gs) {
             // Send to geometry pipeline
             g_state.geometry_pipeline.SubmitVertex(cached_vertex.output_attr);
-        }
-        else {
-            primitive_assembler.SubmitVertex(cached_vertex.output_vertex,
-                std::bind(&std::decay_t<decltype(*VideoCore::g_renderer->Rasterizer())>::AddTriangle,
-                    VideoCore::g_renderer->Rasterizer(),
-                    std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+        } else {
+            primitive_assembler.SubmitVertex(cached_vertex.output_vertex, AddTriangle);
         }
     }
 
