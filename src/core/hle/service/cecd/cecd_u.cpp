@@ -25,7 +25,7 @@ static const Interface::FunctionInfo FunctionTable[] = {
     {0x000F0000, GetCecInfoEventHandle, "GetCecInfoEventHandle"},
     {0x00100000, GetChangeStateEventHandle, "GetChangeStateEventHandle"},
     {0x00110104, nullptr, "OpenAndWrite"},
-    {0x00120104, nullptr, "OpenAndRead"},
+    {0x00120104, OpenAndRead, "OpenAndRead"},
 };
 
 CECD_U::CECD_U() {
